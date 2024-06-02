@@ -8,9 +8,10 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+
 @Getter
 @Setter
+@Entity
 public class User {
 
     @Id
@@ -27,5 +28,5 @@ public class User {
     @Column(length = 100, nullable = false)
     private String password;
 
-    
+
 }
