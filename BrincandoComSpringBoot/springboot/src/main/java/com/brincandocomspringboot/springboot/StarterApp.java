@@ -1,0 +1,34 @@
+package com.brincandocomspringboot.springboot;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.brincandocomspringboot.springboot.model.User;
+import com.brincandocomspringboot.springboot.repository.UserRepository;
+
+@Component
+public class StarterApp implements CommandLineRunner{
+
+    @Autowired
+    private UserRepository repository;
+
+
+    @Override
+    public void run(String... args) throws Exception {
+        User user = new User();
+
+        user.setName("Matheus");
+        user.setUsername("m4fagundes");
+        user.setPassword("Senha teste");
+
+        repository.save(user);
+
+        for (User u : repository.findAll()) {
+    
+            System.out.println(u);
+
+        }
+    }
+
+}
