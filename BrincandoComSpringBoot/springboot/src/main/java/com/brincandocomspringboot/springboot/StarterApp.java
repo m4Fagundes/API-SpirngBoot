@@ -18,15 +18,15 @@ public class StarterApp implements CommandLineRunner{
     public void run(String... args) throws Exception {
         User user = new User();
 
-        user.setName("Matheus");
-        user.setUsername("m4fagundes");
-        user.setPassword("Senha teste");
+        user.setName("Matheus fagundes araujo");
+        user.setUsername("m4fagundes3");
+        user.setPassword("Senha teste 3");
 
         repository.save(user);
 
         for (User u : repository.findAll()) {
     
-            System.out.println(u);
+            System.out.println("isso " + u);
 
         }
     }
